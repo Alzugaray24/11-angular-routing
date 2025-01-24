@@ -15,25 +15,25 @@ export class HomeComponent {
     {
       title: 'Gestión de Usuarios',
       description: 'Administra los usuarios registrados en la plataforma.',
-      route: '/user-management',
-      icon: 'person', // Icono representativo (opcional)
+      route: '/users',
+      icon: 'person',
     },
     {
       title: 'Gestión de Platos',
       description: 'Agrega, edita o elimina platos del menú.',
-      route: '/dish-management',
+      route: '/dishes',
       icon: 'restaurant',
     },
     {
       title: 'Gestión del Menú',
       description: 'Crea y administra los menús disponibles.',
-      route: '/menu-management',
+      route: '/menus',
       icon: 'menu_book',
     },
     {
       title: 'Gestión de Pedidos',
       description: 'Visualiza y gestiona los pedidos realizados.',
-      route: '/order-management',
+      route: '/orders',
       icon: 'shopping_cart',
     },
   ];

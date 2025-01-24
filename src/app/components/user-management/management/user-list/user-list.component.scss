@@ -1,0 +1,73 @@
+@use "../../../../ui/variables.scss" as *;
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm;
+  background-color: $color-light-gray; // Fondo claro para un contraste suave
+
+  &__container {
+    width: 100%;
+    max-width: 600px; // Un ancho máximo un poco más amplio para mejorar la legibilidad
+    background-color: $color-white; // Fondo blanco para un contraste más limpio
+    padding: $spacing-lg;
+    border-radius: $border-radius-lg; // Bordes más suaves
+    box-shadow: $box-shadow-lg; // Sombra más prominente para un efecto más elegante
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: $spacing-xl; // Espacio arriba para separar del borde
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    color: $color-dark-gray;
+    width: 100%; // Asegura que el título ocupe toda la línea
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    background-color: $color-light-gray; // Fondo claro para mayor legibilidad
+    color: $color-dark-gray; // Texto oscuro para mejor contraste
+    border: $border-width solid $color-gray; // Borde gris suave
+    border-radius: $border-radius-md; // Bordes más redondeados
+    transition: border-color $transition-fast, box-shadow $transition-fast; // Efectos de transición
+
+    &:hover {
+      border-color: $color-primary; // Cambio de color de borde al pasar el ratón
+      box-shadow: 0 0 5px $color-primary; // Efecto sutil al pasar el ratón
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item-name {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $color-dark-gray;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__item-type {
+    font-size: $font-size-small;
+    color: $color-gray;
+  }
+}

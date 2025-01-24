@@ -1,0 +1,13 @@
+<div class="user-list">
+  <div class="user-list__container">
+    <h1 class="user-list__title">Lista de Usuarios</h1>
+    <ul class="user-list__items">
+      <li *ngFor="let customer of customers" class="user-list__item">
+        <div class="user-list__info">
+          <span class="user-list__item-name">{{ customer.name }}</span>
+          <span class="user-list__item-type">{{ customer.type }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

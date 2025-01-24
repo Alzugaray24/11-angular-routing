@@ -1,0 +1,15 @@
+<div class="form">
+  <form class="form__container" (ngSubmit)="saveCustomer()">
+    <label for="name" class="form__label">Nombre</label>
+    <input
+      id="name"
+      type="text"
+      [(ngModel)]="customerName"
+      name="name"
+      placeholder="Ingrese su nombre"
+      class="form__input"
+      required
+    />
+    <button type="submit" class="form__button">Enviar</button>
+  </form>
+</div>

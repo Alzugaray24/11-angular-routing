@@ -1,0 +1,84 @@
+@use "../../ui/variables.scss" as *;
+
+.user-management {
+  display: flex;
+  padding: $spacing-lg;
+  gap: $spacing-lg;
+
+  &__sidebar {
+    width: 50%;
+    max-width: 600px; // Limita el ancho para evitar que sea demasiado grande
+  }
+
+  &__content {
+    width: 50%;
+    padding: $spacing-md;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    color: $color-dark-gray;
+    width: 100%; // Asegura que el título ocupe toda la línea
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-lg;
+    color: $color-gray;
+    width: 100%; // Asegura que la descripción ocupe toda la línea
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Configura un grid de dos columnas
+    gap: $spacing-lg;
+    width: 100%;
+  }
+
+  &__action {
+    background-color: $color-white;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    text-decoration: none;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $box-shadow-md;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+      margin-bottom: $spacing-lg; // Asegura que haya espacio entre los botones en móviles
+    }
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    color: $color-primary;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &__action-title {
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      color: $color-dark-gray;
+      margin-bottom: $spacing-xs;
+    }
+
+    &__action-description {
+      font-size: $font-size-small;
+      color: $color-gray;
+    }
+  }
+}
