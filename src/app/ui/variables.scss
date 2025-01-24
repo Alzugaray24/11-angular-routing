@@ -1,0 +1,55 @@
+// assets/styles/variables.scss
+
+// Colores principales
+$color-primary: #1da1f2; // Azul principal (Twitter blue)
+$color-secondary: #17bf63; // Verde complementario
+$color-accent: #ffad1f; // Amarillo para acentos
+$color-danger: #e0245e; // Rojo para errores o alertas
+$color-light-gray: #f5f5f5; // Fondo claro
+$color-dark-gray: #333333; // Fondo oscuro
+$color-white: #ffffff; // Blanco
+$color-black: #000000; // Negro
+$color-gray: #666666; // Gris
+
+// Tipografía
+$font-family-base: "Roboto", sans-serif;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Espaciado
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Bordes
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-width: 1px;
+$border-color: $color-dark-gray;
+
+// Sombras
+$box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+// Alturas
+$header-height: 60px;
+$footer-height: 50px;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+
+// Animaciones
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;

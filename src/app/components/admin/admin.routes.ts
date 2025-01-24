@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from '../layout/layout.component';
-import { ContentComponent } from '../content/content.component';
 import { HomeComponent } from '../home/home.component';
-import { LoginComponent } from '../login/login.component';
-import { adminGuard } from './admin.guard';
+import { UserManagmentComponent } from '../user-managment/user-managment.component';
+import { DishManagmentComponent } from '../dish-managment/dish-managment.component';
+import { MenuManagmentComponent } from '../menu-managment/menu-managment.component';
+import { OrderManagmentComponent } from '../order-managment/order-managment.component';
 
 export const routes: Routes = [
   {
@@ -12,62 +13,24 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: ContentComponent,
-        outlet: 'header'
-      },
-      {
-        path: '',
-        component: ContentComponent,
-        outlet: 'left-side'
-      },
-      {
-        path: '',
         component: HomeComponent,
       },
       {
-        path: '',
-        component: ContentComponent,
-        outlet: 'right-side'
+        path: 'users',
+        component: UserManagmentComponent,
       },
       {
-        path: '',
-        component: ContentComponent,
-        outlet: 'footer'
-      }
-    ]
+        path: 'dishes',
+        component: DishManagmentComponent,
+      },
+      {
+        path: 'menus',
+        component: MenuManagmentComponent,
+      },
+      {
+        path: 'orders',
+        component: OrderManagmentComponent,
+      },
+    ],
   },
-  {
-    path: 'login/:manuel/:id',
-    component: LayoutComponent,
-    canActivate: [adminGuard],
-    data: { isLogged: true },
-    children: [
-      {
-        path: '',
-        component: ContentComponent,
-        outlet: 'header'
-      },
-      {
-        path: '',
-        component: ContentComponent,
-        outlet: 'left-side',
-        data: { isBrota: true }
-      },
-      {
-        path: '',
-        component: LoginComponent,
-        data: { isCurrent: true }
-      },
-      {
-        path: '',
-        component: ContentComponent,
-        outlet: 'right-side'
-      },
-      {
-        path: '',
-        component: ContentComponent,
-        outlet: 'footer'
-      }
-    ]
-  }
 ];

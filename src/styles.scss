@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+// src/styles/styles.scss
+
+@use "sass:color";
+@use "./app/ui/variables" as *;
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background-color: $color-light-gray;
+  color: $color-dark-gray;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $color-dark-gray;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: $color-primary;
+  color: $color-white;
+  border: none;
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: color.scale($color-primary, $lightness: -18.8191881919%);
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
