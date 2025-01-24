@@ -19,7 +19,22 @@ export class CustomerService {
   }
 
   getAllCustomers(): Observable<CustomerResponseDTO[]> {
-    const response = this.http.get<CustomerResponseDTO[]>(this.apiUrl);
-    return response;
+    return this.http.get<CustomerResponseDTO[]>(this.apiUrl);
+  }
+
+  updateCustomer(
+    id: number,
+    customer: CustomerRequestDTO
+  ): Observable<CustomerResponseDTO> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put<CustomerResponseDTO>(
+      `${this.apiUrl}/${id}`,
+      customer,
+      { headers }
+    );
+  }
+
+  deleteCustomer(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

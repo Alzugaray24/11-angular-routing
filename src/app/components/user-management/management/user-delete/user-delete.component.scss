@@ -1,0 +1,86 @@
+@use "../../../../ui/variables.scss" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm;
+  background-color: $color-light-gray; // Fondo claro para un contraste suave
+}
+
+.form__container {
+  width: 100%;
+  max-width: 450px; // Un ancho máximo un poco más amplio para mejorar la legibilidad
+  background-color: $color-white; // Fondo blanco para un contraste más limpio
+  padding: $spacing-lg;
+  border-radius: $border-radius-lg; // Bordes más suaves
+  box-shadow: $box-shadow-lg; // Sombra más prominente para un efecto más elegante
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: $spacing-xl; // Espacio arriba para separar del borde
+}
+
+.form__label {
+  display: block;
+  margin-bottom: $spacing-xs;
+  color: $color-dark-gray; // Etiquetas de texto en gris oscuro para mejor contraste
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  text-transform: capitalize; // Capitaliza la primera letra para mejor estilo
+}
+
+.form__input {
+  width: 100%; // Asegura que el campo de entrada ocupe todo el ancho disponible
+  padding: $spacing-sm;
+  margin-bottom: $spacing-md;
+  background-color: $color-light_gray; // Fondo claro para mayor legibilidad
+  color: $color-dark_gray; // Texto oscuro para mejor contraste
+  border: $border-width solid $color-gray; // Borde gris suave
+  border-radius: $border-radius-md; // Bordes más redondeados
+  font-size: $font-size-base;
+  transition: border-color $transition-fast, box-shadow $transition-fast; // Efectos de transición
+
+  &::placeholder {
+    color: $color-gray; // Gris suave para los placeholders
+  }
+
+  &:focus {
+    border-color: $color-primary; // Cambio de color de borde al enfocar
+    box-shadow: 0 0 5px $color-primary; // Efecto sutil al enfocar
+    outline: none; // Elimina el contorno por defecto
+  }
+}
+
+.form__button {
+  width: 100%;
+  padding: $spacing-sm;
+  background-color: $color-primary; // Azul principal
+  color: $color-white;
+  border: none;
+  border-radius: $border-radius-lg; // Bordes más suaves y redondeados
+  font-size: $font-size-large; // Botón más prominente
+  cursor: pointer;
+  transition: background-color $transition-fast, transform $transition-normal;
+
+  &:hover {
+    background-color: darken(
+      $color-primary,
+      10%
+    ); // Oscurece el color al pasar el ratón
+    transform: translateY(-2px); // Efecto de elevación al pasar el ratón
+  }
+
+  &:active {
+    transform: translateY(
+      0
+    ); // Vuelve a la posición original cuando se hace clic
+  }
+
+  &:focus {
+    outline: none; // Elimina el borde por defecto al hacer foco
+    box-shadow: 0 0 5px $color-primary; // Efecto de sombra cuando el botón tiene el foco
+  }
+}

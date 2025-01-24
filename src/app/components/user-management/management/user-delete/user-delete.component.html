@@ -1,1 +1,15 @@
-<p>user-delete works!</p>
+<div class="form">
+  <form class="form__container" (ngSubmit)="deleteCustomer()">
+    <label for="id" class="form__label">ID del Cliente</label>
+    <input
+      id="id"
+      type="number"
+      [(ngModel)]="customerId"
+      name="id"
+      placeholder="Ingrese el ID del cliente"
+      class="form__input"
+      required
+    />
+    <button type="submit" class="form__button">Eliminar</button>
+  </form>
+</div>
