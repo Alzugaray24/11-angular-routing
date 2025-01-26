@@ -1,0 +1,27 @@
+<div class="menu-management">
+  <div class="menu-management__sidebar">
+    <h1 class="menu-management__title">Gestión de Menús</h1>
+    <p class="menu-management__description">
+      Administra los menús del sistema con las opciones disponibles a
+      continuación.
+    </p>
+    <div class="menu-management__actions">
+      <div
+        *ngFor="let action of actions"
+        class="menu-management__action"
+        (click)="navigateTo(action.route)"
+      >
+        <div class="menu-management__icon">📋</div>
+        <div class="menu-management__info">
+          <h2 class="menu-management__action-title">{{ action.title }}</h2>
+          <p class="menu-management__action-description">
+            {{ action.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-management__content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

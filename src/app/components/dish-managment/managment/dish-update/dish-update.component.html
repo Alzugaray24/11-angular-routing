@@ -1,0 +1,35 @@
+<div class="form">
+  <form class="form__container" (ngSubmit)="updateDish()">
+    <label for="id" class="form__label">ID del Plato</label>
+    <input
+      id="id"
+      type="number"
+      [(ngModel)]="dishId"
+      name="id"
+      placeholder="Ingrese el ID del plato"
+      class="form__input"
+      required
+    />
+    <label for="name" class="form__label">Nombre del Plato</label>
+    <input
+      id="name"
+      type="text"
+      [(ngModel)]="dishName"
+      name="name"
+      placeholder="Ingrese el nombre del plato"
+      class="form__input"
+      required
+    />
+    <label for="price" class="form__label">Precio del Plato</label>
+    <input
+      id="price"
+      type="number"
+      [(ngModel)]="dishPrice"
+      name="price"
+      placeholder="Ingrese el precio del plato"
+      class="form__input"
+      required
+    />
+    <button type="submit" class="form__button">Actualizar</button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="form">
+  <form class="form__container" (ngSubmit)="saveMenu()">
+    <label for="name" class="form__label">Nombre del Menú</label>
+    <input
+      id="name"
+      type="text"
+      [(ngModel)]="menuName"
+      name="name"
+      placeholder="Ingrese el nombre del menú"
+      class="form__input"
+      required
+    />
+    <label for="dishes" class="form__label">IDs de los Platos</label>
+    <input
+      id="dishes"
+      type="text"
+      [(ngModel)]="dishIds"
+      name="dishes"
+      placeholder="Ingrese los IDs de los platos separados por comas"
+      class="form__input"
+      required
+    />
+    <button type="submit" class="form__button">Enviar</button>
+  </form>
+</div>

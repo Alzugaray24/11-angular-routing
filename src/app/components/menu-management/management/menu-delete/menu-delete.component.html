@@ -1,0 +1,15 @@
+<div class="form">
+  <form class="form__container" (ngSubmit)="deleteMenu()">
+    <label for="id" class="form__label">ID del Menú</label>
+    <input
+      id="id"
+      type="number"
+      [(ngModel)]="menuId"
+      name="id"
+      placeholder="Ingrese el ID del menú"
+      class="form__input"
+      required
+    />
+    <button type="submit" class="form__button">Eliminar</button>
+  </form>
+</div>

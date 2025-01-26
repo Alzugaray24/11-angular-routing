@@ -1,0 +1,18 @@
+<div class="menu-list">
+  <div class="menu-list__container">
+    <h1 class="menu-list__title">Lista de Menús</h1>
+    <ul class="menu-list__items">
+      <li *ngFor="let menu of menus" class="menu-list__item">
+        <div class="menu-list__info">
+          <span class="menu-list__item-id">Id: {{ menu.id }}</span>
+          <span class="menu-list__item-name">{{ menu.name }}</span>
+          <ul class="menu-list__dishes">
+            <li *ngFor="let dish of menu.dishes" class="menu-list__dish">
+              {{ dish.name }} - {{ dish.price | currency }}
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

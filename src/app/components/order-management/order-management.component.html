@@ -1,0 +1,27 @@
+<div class="order-management">
+  <div class="order-management__sidebar">
+    <h1 class="order-management__title">Gestión de Pedidos</h1>
+    <p class="order-management__description">
+      Administra los pedidos del sistema con las opciones disponibles a
+      continuación.
+    </p>
+    <div class="order-management__actions">
+      <div
+        *ngFor="let action of actions"
+        class="order-management__action"
+        (click)="navigateTo(action.route)"
+      >
+        <div class="order-management__icon">🛒</div>
+        <div class="order-management__info">
+          <h2 class="order-management__action-title">{{ action.title }}</h2>
+          <p class="order-management__action-description">
+            {{ action.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="order-management__content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

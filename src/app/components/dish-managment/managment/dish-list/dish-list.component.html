@@ -1,0 +1,16 @@
+<div class="dish-list">
+  <div class="dish-list__container">
+    <h1 class="dish-list__title">Lista de Platos</h1>
+    <ul class="dish-list__items">
+      <li *ngFor="let dish of dishes" class="dish-list__item">
+        <div class="dish-list__info">
+          <span class="dish-list__item-id">Id: {{ dish.id }}</span>
+          <span class="dish-list__item-name">nombre: {{ dish.name }}</span>
+          <span class="dish-list__item-price"
+            >precio: {{ dish.price | currency }}</span
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

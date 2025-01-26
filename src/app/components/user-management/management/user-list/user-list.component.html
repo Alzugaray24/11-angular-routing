@@ -4,8 +4,11 @@
     <ul class="user-list__items">
       <li *ngFor="let customer of customers" class="user-list__item">
         <div class="user-list__info">
-          <span class="user-list__item-name">{{ customer.name }}</span>
-          <span class="user-list__item-type">{{ customer.type }}</span>
+          <span class="user-list__item-id">id: {{ customer.id }}</span>
+          <span class="user-list__item-name">nombre:{{ customer.name }}</span>
+          <span class="user-list__item-type"
+            >cliente tipo: {{ customer.type }}</span
+          >
         </div>
       </li>
     </ul>

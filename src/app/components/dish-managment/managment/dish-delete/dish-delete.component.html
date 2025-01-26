@@ -1,0 +1,15 @@
+<div class="form">
+  <form class="form__container" (ngSubmit)="deleteDish()">
+    <label for="id" class="form__label">ID del Plato</label>
+    <input
+      id="id"
+      type="number"
+      [(ngModel)]="dishId"
+      name="id"
+      placeholder="Ingrese el ID del plato"
+      class="form__input"
+      required
+    />
+    <button type="submit" class="form__button">Eliminar</button>
+  </form>
+</div>
