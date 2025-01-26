@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuService } from '../../../../services/menu/menu.service'; // Ajusta la ruta según tu estructura de proyecto
-import { MenuResponseDTO } from '../../../../interfaces/menu/menu.response.interface'; // Ajusta la ruta según tu estructura de proyecto
+import { MenuService } from '../../../../services/menu/menu.service';
+import { MenuResponseDTO } from '../../../../interfaces/menu/menu.response.interface';
 
 @Component({
   selector: 'app-menu-list',

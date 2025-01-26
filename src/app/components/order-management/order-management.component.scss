@@ -81,4 +81,39 @@
       color: $color-gray;
     }
   }
+
+  &__input {
+    margin-top: $spacing-lg;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    color: $color-dark-gray;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    text-transform: capitalize;
+  }
+
+  &__input-field {
+    width: 100%;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-md;
+    background-color: $color-light-gray;
+    color: $color-dark-gray;
+    border: $border-width solid $color-gray;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &::placeholder {
+      color: $color-gray;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 5px $color-primary;
+      outline: none;
+    }
+  }
 }

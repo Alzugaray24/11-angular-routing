@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DishService } from '../../../../services/dish/dish.service'; // Ajusta la ruta según tu estructura de proyecto
-import { DishResponseDTO } from '../../../../interfaces/dish/dish.response.interface'; // Ajusta la ruta según tu estructura de proyecto
+import { DishService } from '../../../../services/dish/dish.service';
+import { DishResponseDTO } from '../../../../interfaces/dish/dish.response.interface';
 
 @Component({
   selector: 'app-dish-list',

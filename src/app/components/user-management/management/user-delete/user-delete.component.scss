@@ -6,81 +6,77 @@
   align-items: center;
   justify-content: center;
   padding: $spacing-sm;
-  background-color: $color-light-gray; // Fondo claro para un contraste suave
+  background-color: $color-light-gray;
 }
 
 .form__container {
   width: 100%;
-  max-width: 450px; // Un ancho máximo un poco más amplio para mejorar la legibilidad
-  background-color: $color-white; // Fondo blanco para un contraste más limpio
+  max-width: 450px;
+  background-color: $color-white;
   padding: $spacing-lg;
-  border-radius: $border-radius-lg; // Bordes más suaves
-  box-shadow: $box-shadow-lg; // Sombra más prominente para un efecto más elegante
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-lg;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: $spacing-xl; // Espacio arriba para separar del borde
+  margin-top: $spacing-xl;
 }
 
 .form__label {
   display: block;
   margin-bottom: $spacing-xs;
-  color: $color-dark-gray; // Etiquetas de texto en gris oscuro para mejor contraste
+  color: $color-dark-gray;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
-  text-transform: capitalize; // Capitaliza la primera letra para mejor estilo
+  text-transform: capitalize;
 }
 
 .form__input {
-  width: 100%; // Asegura que el campo de entrada ocupe todo el ancho disponible
+  width: 100%;
   padding: $spacing-sm;
   margin-bottom: $spacing-md;
-  background-color: $color-light_gray; // Fondo claro para mayor legibilidad
-  color: $color-dark_gray; // Texto oscuro para mejor contraste
-  border: $border-width solid $color-gray; // Borde gris suave
-  border-radius: $border-radius-md; // Bordes más redondeados
+  background-color: $color-light-gray;
+  color: $color-dark-gray;
+  border: $border-width solid $color-gray;
+  border-radius: $border-radius-md;
   font-size: $font-size-base;
-  transition: border-color $transition-fast, box-shadow $transition-fast; // Efectos de transición
+  transition: border-color $transition-fast, box-shadow $transition-fast;
 
   &::placeholder {
-    color: $color-gray; // Gris suave para los placeholders
+    color: $color-gray;
   }
 
   &:focus {
-    border-color: $color-primary; // Cambio de color de borde al enfocar
-    box-shadow: 0 0 5px $color-primary; // Efecto sutil al enfocar
-    outline: none; // Elimina el contorno por defecto
+    border-color: $color-primary;
+    box-shadow: 0 0 5px $color-primary;
+    outline: none;
   }
 }
 
 .form__button {
   width: 100%;
   padding: $spacing-sm;
-  background-color: $color-primary; // Azul principal
+  background-color: $color-primary;
   color: $color-white;
   border: none;
-  border-radius: $border-radius-lg; // Bordes más suaves y redondeados
-  font-size: $font-size-large; // Botón más prominente
+  border-radius: $border-radius-lg;
+  font-size: $font-size-large;
   cursor: pointer;
-  transition: background-color $transition-fast, transform $transition-normal;
+  transition: background-color $transition-fast, transform $transition-normal,
+    opacity $transition-fast;
 
   &:hover {
-    background-color: darken(
-      $color-primary,
-      10%
-    ); // Oscurece el color al pasar el ratón
-    transform: translateY(-2px); // Efecto de elevación al pasar el ratón
+    opacity: 0.8;
+    transform: translateY(-2px);
   }
 
   &:active {
-    transform: translateY(
-      0
-    ); // Vuelve a la posición original cuando se hace clic
+    transform: translateY(0);
   }
 
   &:focus {
-    outline: none; // Elimina el borde por defecto al hacer foco
-    box-shadow: 0 0 5px $color-primary; // Efecto de sombra cuando el botón tiene el foco
+    outline: none;
+    box-shadow: 0 0 5px $color-primary;
   }
 }

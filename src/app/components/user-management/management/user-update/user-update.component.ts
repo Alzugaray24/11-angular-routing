@@ -22,7 +22,6 @@ export class UserUpdateComponent {
         .updateCustomer(this.customerId, customer)
         .subscribe((response) => {
           console.log('Cliente actualizado:', response);
-          // Aquí puedes agregar lógica adicional, como mostrar un mensaje de éxito o redirigir a otra página
         });
     } else {
       console.error('El nombre del cliente no puede estar vacío');

@@ -7,7 +7,7 @@
 
   &__sidebar {
     width: 50%;
-    max-width: 600px; // Limita el ancho para evitar que sea demasiado grande
+    max-width: 600px;
   }
 
   &__content {
@@ -20,19 +20,19 @@
     font-weight: $font-weight-bold;
     margin-bottom: $spacing-md;
     color: $color-dark-gray;
-    width: 100%; // Asegura que el título ocupe toda la línea
+    width: 100%;
   }
 
   &__description {
     font-size: $font-size-base;
     margin-bottom: $spacing-lg;
     color: $color-gray;
-    width: 100%; // Asegura que la descripción ocupe toda la línea
+    width: 100%;
   }
 
   &__actions {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // Configura un grid de dos columnas
+    grid-template-columns: repeat(2, 1fr);
     gap: $spacing-lg;
     width: 100%;
   }
@@ -56,7 +56,7 @@
 
     @media (max-width: $breakpoint-sm) {
       width: 100%;
-      margin-bottom: $spacing-lg; // Asegura que haya espacio entre los botones en móviles
+      margin-bottom: $spacing-lg;
     }
   }
 

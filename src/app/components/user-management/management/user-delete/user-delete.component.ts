@@ -19,7 +19,6 @@ export class UserDeleteComponent {
       this.customerService.deleteCustomer(this.customerId).subscribe(
         () => {
           console.log('Cliente eliminado');
-          // Aquí puedes agregar lógica adicional, como mostrar un mensaje de éxito o redirigir a otra página
         },
         (error) => {
           console.error('Error al eliminar el cliente:', error);

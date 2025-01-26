@@ -1,1 +1,26 @@
-<p>order-update works!</p>
+<div class="form">
+  <form class="form__container" (ngSubmit)="updateOrder()">
+    <h1 class="form__label">Actualizar Pedido</h1>
+    <label for="customerId" class="form__label">ID del Cliente</label>
+    <input
+      id="customerId"
+      type="number"
+      [(ngModel)]="customerId"
+      name="customerId"
+      class="form__input"
+      required
+    />
+
+    <label for="dishes" class="form__label">IDs de los Platos</label>
+    <input
+      id="dishes"
+      type="text"
+      [(ngModel)]="dishIds"
+      name="dishes"
+      class="form__input"
+      required
+    />
+
+    <button type="submit" class="form__button">Actualizar Pedido</button>
+  </form>
+</div>

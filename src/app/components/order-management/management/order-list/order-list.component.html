@@ -1,1 +1,21 @@
-<p>order-list works!</p>
+<div class="form">
+  <div class="form__container">
+    <h1 class="form__label">Lista de Pedidos</h1>
+    <ul class="form__list" *ngIf="orders$ | async as orders; else noOrders">
+      <li class="form__item" *ngFor="let order of orders">
+        <span><strong>ID:</strong> {{ order.id }}</span>
+        <span><strong>Cliente:</strong> {{ order.customer.name }}</span>
+        <span><strong>Total:</strong> {{ order.total | currency }}</span>
+        <span><strong>Platos:</strong></span>
+        <ul>
+          <li *ngFor="let dish of order.dishes">
+            {{ dish.name }} - {{ dish.price | currency }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ng-template #noOrders>
+      <p class="form__input">No se encontraron pedidos.</p>
+    </ng-template>
+  </div>
+</div>

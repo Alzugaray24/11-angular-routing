@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule para usar ngModel
+import { FormsModule } from '@angular/forms';
 import { CustomerService } from '../../../../services/customer/customer.service';
 
 @Component({
   selector: 'app-user-create',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Agrega FormsModule aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './user-create.component.html',
   styleUrls: ['./user-create.component.scss'],
-  providers: [CustomerService], // Proporciona el servicio aquí si no está en el módulo raíz
+  providers: [CustomerService],
 })
 export class UserCreateComponent {
   customerName: string = '';

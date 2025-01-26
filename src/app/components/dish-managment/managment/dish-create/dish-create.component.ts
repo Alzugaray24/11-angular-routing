@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule para usar ngModel
-import { DishService } from '../../../../services/dish/dish.service'; // Ajusta la ruta según tu estructura de proyecto
+import { FormsModule } from '@angular/forms';
+import { DishService } from '../../../../services/dish/dish.service';
 
 @Component({
   selector: 'app-dish-create',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Agrega FormsModule aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './dish-create.component.html',
   styleUrls: ['./dish-create.component.scss'],
-  providers: [DishService], // Proporciona el servicio aquí si no está en el módulo raíz
+  providers: [DishService],
 })
 export class DishCreateComponent {
   dishName: string = '';

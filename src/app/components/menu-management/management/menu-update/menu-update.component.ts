@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule para usar ngModel
-import { MenuService } from '../../../../services/menu/menu.service'; // Ajusta la ruta según tu estructura de proyecto
+import { FormsModule } from '@angular/forms';
+import { MenuService } from '../../../../services/menu/menu.service';
 
 @Component({
   selector: 'app-menu-update',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Agrega FormsModule aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './menu-update.component.html',
   styleUrls: ['./menu-update.component.scss'],
-  providers: [MenuService], // Proporciona el servicio aquí si no está en el módulo raíz
+  providers: [MenuService],
 })
 export class MenuUpdateComponent {
   menuId: number = 0;
   menuName: string = '';
-  dishIds: string = ''; // Usamos un string para capturar los IDs separados por comas
+  dishIds: string = '';
 
   constructor(private menuService: MenuService) {}
 

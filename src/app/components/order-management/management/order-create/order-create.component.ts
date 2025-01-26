@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule para usar ngModel
-import { OrderService } from '../../../../services/order/order.service'; // Ajusta la ruta según tu estructura de proyecto
+import { FormsModule } from '@angular/forms';
+import { OrderService } from '../../../../services/order/order.service';
 
 @Component({
   selector: 'app-order-create',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Agrega FormsModule aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './order-create.component.html',
   styleUrls: ['./order-create.component.scss'],
-  providers: [OrderService], // Proporciona el servicio aquí si no está en el módulo raíz
+  providers: [OrderService],
 })
 export class OrderCreateComponent {
   customerId: number = 0;
-  dishIds: string = ''; // Usamos un string para capturar los IDs separados por comas
+  dishIds: string = '';
 
   constructor(private orderService: OrderService) {}
 

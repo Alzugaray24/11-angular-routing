@@ -11,6 +11,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./order-management.component.scss'],
 })
 export class OrderManagementComponent {
+  orderId: number | null = null;
+
   constructor(private router: Router) {}
 
   actions = [
@@ -36,7 +38,11 @@ export class OrderManagementComponent {
     },
   ];
 
-  navigateTo(route: string) {
-    this.router.navigate([route]);
+  navigateTo(route: string, id?: number) {
+    if (id !== undefined && id !== null) {
+      this.router.navigate([`${route}/${id}`]);
+    } else {
+      this.router.navigate([route]);
+    }
   }
 }
