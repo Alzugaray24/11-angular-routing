@@ -1,15 +1,25 @@
 <div class="form">
   <form class="form__container" (ngSubmit)="deleteDish()">
-    <label for="id" class="form__label">ID del Plato</label>
+    <label for="dishId" class="form__label">ID del Plato</label>
     <input
-      id="id"
+      id="dishId"
       type="number"
       [(ngModel)]="dishId"
-      name="id"
+      name="dishId"
       placeholder="Ingrese el ID del plato"
       class="form__input"
       required
     />
     <button type="submit" class="form__button">Eliminar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>

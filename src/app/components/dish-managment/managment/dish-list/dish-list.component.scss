@@ -1,79 +1,74 @@
 @use "../../../../ui/variables.scss" as *;
+@use "sass:color";
 
 .dish-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: $spacing-sm;
-  background-color: $color-light-gray;
+  padding: $spacing-lg;
 
   &__container {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     background-color: $color-white;
     padding: $spacing-lg;
     border-radius: $border-radius-lg;
-    box-shadow: $box-shadow-lg;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: $spacing-xl;
+    box-shadow: $box-shadow-md;
   }
 
   &__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: $font-weight-bold;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-lg;
     color: $color-dark-gray;
-    width: 100%;
+  }
+
+  &__message {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-base;
+
+    &--success {
+      color: $color-success;
+    }
+
+    &--error {
+      color: $color-danger;
+    }
   }
 
   &__items {
     list-style: none;
     padding: 0;
-    width: 100%;
+    margin: 0;
   }
 
   &__item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: $spacing-sm;
-    margin-bottom: $spacing-sm;
+    flex-direction: column;
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
     background-color: $color-light-gray;
-    color: $color-dark_gray;
-    border: $border-width solid $color-gray;
     border-radius: $border-radius-md;
-    transition: border-color $transition-fast, box-shadow $transition-fast;
+    box-shadow: $box-shadow-sm;
+    transition: transform $transition-fast, box-shadow $transition-fast;
 
     &:hover {
-      border-color: $color-primary;
-      box-shadow: 0 0 5px $color-primary;
+      background-color: color.adjust($color-light-gray, $lightness: -10%);
+      transform: translateY(-5px);
+      box-shadow: $box-shadow-md;
     }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-  }
 
-  &__item-id {
-    font-size: $font-size-small;
-    color: $color-primary;
-    margin-bottom: $spacing-xs;
-  }
-
-  &__item-name {
-    font-size: $font-size-large;
-    font-weight: $font-weight-bold;
-    color: $color-dark-gray;
-    margin-bottom: $spacing-xs;
-  }
-
-  &__item-price {
-    font-size: $font-size-small;
-    color: $color-gray;
+    &__item-id,
+    &__item-name,
+    &__item-price {
+      font-size: $font-size-base;
+      color: $color-dark-gray;
+      margin-bottom: $spacing-xs;
+    }
   }
 }

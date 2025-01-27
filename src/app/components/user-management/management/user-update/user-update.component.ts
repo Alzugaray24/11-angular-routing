@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { CustomerService } from '../../../../services/customer/customer.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-update',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './user-update.component.html',
   styleUrls: ['./user-update.component.scss'],
@@ -12,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 export class UserUpdateComponent {
   customerId: number = 0;
   customerName: string = '';
+  message: string = '';
+  messageType: 'success' | 'error' = 'success';
 
   constructor(private customerService: CustomerService) {}
 
@@ -20,11 +24,25 @@ export class UserUpdateComponent {
       const customer = { name: this.customerName };
       this.customerService
         .updateCustomer(this.customerId, customer)
-        .subscribe((response) => {
-          console.log('Cliente actualizado:', response);
-        });
+        .pipe(
+          tap(
+            (response) => {
+              console.log('Cliente actualizado:', response);
+              this.message = 'Cliente actualizado exitosamente';
+              this.messageType = 'success';
+            },
+            (error) => {
+              console.error('Error al actualizar el cliente:', error);
+              this.message = 'Error al actualizar el cliente';
+              this.messageType = 'error';
+            }
+          )
+        )
+        .subscribe();
     } else {
-      console.error('El nombre del cliente no puede estar vacío');
+      this.message = 'El nombre del cliente no puede estar vacío';
+      this.messageType = 'error';
+      console.error(this.message);
     }
   }
 }

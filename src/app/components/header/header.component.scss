@@ -1,0 +1,34 @@
+@use "../../ui/variables.scss" as *;
+
+.header {
+  background-color: $color-black;
+  padding: $spacing-md;
+  box-shadow: $box-shadow-md;
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    gap: $spacing-lg;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__nav-item {
+    &__nav-link {
+      text-decoration: none;
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      transition: color $transition-fast;
+
+      &:hover,
+      &.active {
+        color: $color-secondary;
+      }
+    }
+  }
+}

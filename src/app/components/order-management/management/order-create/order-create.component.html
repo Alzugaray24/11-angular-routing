@@ -10,16 +10,26 @@
       class="form__input"
       required
     />
-    <label for="dishes" class="form__label">IDs de los Platos</label>
+    <label for="dishIds" class="form__label">IDs de los Platos</label>
     <input
-      id="dishes"
+      id="dishIds"
       type="text"
       [(ngModel)]="dishIds"
-      name="dishes"
+      name="dishIds"
       placeholder="Ingrese los IDs de los platos separados por comas"
       class="form__input"
       required
     />
-    <button type="submit" class="form__button">Enviar</button>
+    <button type="submit" class="form__button">Guardar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>

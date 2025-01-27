@@ -1,29 +1,23 @@
 @use "../../ui/variables.scss" as *;
 
 .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: $spacing-lg;
+}
 
-  &__title {
-    font-size: 2.5rem;
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacing-lg;
-    color: $color-dark-gray;
-  }
-
-  &__description {
-    font-size: $font-size-base;
-    margin-bottom: $spacing-md;
-    color: $color-gray;
-  }
-
-  &__management-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: $spacing-md;
-  }
+.management-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .management-option {
+  margin-top: 20px;
   background-color: $color-white;
   border: $border-width solid $border-color;
   border-radius: $border-radius-md;

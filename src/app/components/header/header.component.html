@@ -1,1 +1,15 @@
-<p>header works!</p>
+<header class="header">
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      <li class="header__nav-item" *ngFor="let item of navItems">
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          class="header__nav-link"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

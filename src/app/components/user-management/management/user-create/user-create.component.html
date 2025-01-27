@@ -12,4 +12,14 @@
     />
     <button type="submit" class="form__button">Enviar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>

@@ -1,15 +1,25 @@
 <div class="form">
   <form class="form__container" (ngSubmit)="deleteMenu()">
-    <label for="id" class="form__label">ID del Menú</label>
+    <label for="menuId" class="form__label">ID del Menú</label>
     <input
-      id="id"
+      id="menuId"
       type="number"
       [(ngModel)]="menuId"
-      name="id"
+      name="menuId"
       placeholder="Ingrese el ID del menú"
       class="form__input"
       required
     />
     <button type="submit" class="form__button">Eliminar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>

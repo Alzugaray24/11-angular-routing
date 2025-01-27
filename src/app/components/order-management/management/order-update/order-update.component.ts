@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrderService } from '../../../../services/order/order.service';
 import { OrderRequestDTO } from '../../../../interfaces/order/order.request.interface';
-import { OrderResponseDTO } from '../../../../interfaces/order/order.response.interface';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-order-update',
@@ -16,6 +16,8 @@ export class OrderUpdateComponent {
   orderId: number = 0;
   customerId: number = 0;
   dishIds: string = '';
+  message: string = '';
+  messageType: 'success' | 'error' = 'success';
 
   constructor(private orderService: OrderService) {}
 
@@ -30,13 +32,26 @@ export class OrderUpdateComponent {
       };
       this.orderService
         .updateOrder(this.orderId, orderRequest)
-        .subscribe((response) => {
-          console.log('Pedido actualizado:', response);
-        });
+        .pipe(
+          tap({
+            next: (response) => {
+              console.log('Pedido actualizado:', response);
+              this.message = 'Pedido actualizado exitosamente';
+              this.messageType = 'success';
+            },
+            error: (error) => {
+              console.error('Error al actualizar el pedido:', error);
+              this.message = 'Error al actualizar el pedido';
+              this.messageType = 'error';
+            },
+          })
+        )
+        .subscribe();
     } else {
-      console.error(
-        'El ID del cliente y los IDs de los platos no pueden estar vacíos'
-      );
+      this.message =
+        'El ID del cliente y los IDs de los platos no pueden estar vacíos';
+      this.messageType = 'error';
+      console.error(this.message);
     }
   }
 }

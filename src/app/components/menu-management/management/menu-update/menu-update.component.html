@@ -1,35 +1,45 @@
 <div class="form">
   <form class="form__container" (ngSubmit)="updateMenu()">
-    <label for="id" class="form__label">ID del Menú</label>
+    <label for="menuId" class="form__label">ID del Menú</label>
     <input
-      id="id"
+      id="menuId"
       type="number"
       [(ngModel)]="menuId"
-      name="id"
+      name="menuId"
       placeholder="Ingrese el ID del menú"
       class="form__input"
       required
     />
-    <label for="name" class="form__label">Nombre del Menú</label>
+    <label for="menuName" class="form__label">Nombre del Menú</label>
     <input
-      id="name"
+      id="menuName"
       type="text"
       [(ngModel)]="menuName"
-      name="name"
+      name="menuName"
       placeholder="Ingrese el nombre del menú"
       class="form__input"
       required
     />
-    <label for="dishes" class="form__label">IDs de los Platos</label>
+    <label for="dishIds" class="form__label">IDs de los Platos</label>
     <input
-      id="dishes"
+      id="dishIds"
       type="text"
       [(ngModel)]="dishIds"
-      name="dishes"
+      name="dishIds"
       placeholder="Ingrese los IDs de los platos separados por comas"
       class="form__input"
       required
     />
     <button type="submit" class="form__button">Actualizar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>

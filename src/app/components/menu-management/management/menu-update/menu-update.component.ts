@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MenuService } from '../../../../services/menu/menu.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu-update',
@@ -15,6 +16,8 @@ export class MenuUpdateComponent {
   menuId: number = 0;
   menuName: string = '';
   dishIds: string = '';
+  message: string = '';
+  messageType: 'success' | 'error' = 'success';
 
   constructor(private menuService: MenuService) {}
 
@@ -26,13 +29,26 @@ export class MenuUpdateComponent {
       const menuRequest = { name: this.menuName, dishIds: dishIdsArray };
       this.menuService
         .updateMenu(this.menuId, menuRequest)
-        .subscribe((response) => {
-          console.log('Menú actualizado:', response);
-        });
+        .pipe(
+          tap({
+            next: (response) => {
+              console.log('Menú actualizado:', response);
+              this.message = 'Menú actualizado exitosamente';
+              this.messageType = 'success';
+            },
+            error: (error) => {
+              console.error('Error al actualizar el menú:', error);
+              this.message = 'Error al actualizar el menú';
+              this.messageType = 'error';
+            },
+          })
+        )
+        .subscribe();
     } else {
-      console.error(
-        'El nombre del menú y los IDs de los platos no pueden estar vacíos'
-      );
+      this.message =
+        'El nombre del menú y los IDs de los platos no pueden estar vacíos';
+      this.messageType = 'error';
+      console.error(this.message);
     }
   }
 }

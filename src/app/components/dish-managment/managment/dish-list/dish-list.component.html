@@ -1,13 +1,23 @@
 <div class="dish-list">
   <div class="dish-list__container">
     <h1 class="dish-list__title">Lista de Platos</h1>
+    <div
+      *ngIf="message"
+      [ngClass]="{
+        'dish-list__message--success': messageType === 'success',
+        'dish-list__message--error': messageType === 'error'
+      }"
+      class="dish-list__message"
+    >
+      {{ message }}
+    </div>
     <ul class="dish-list__items">
       <li *ngFor="let dish of dishes" class="dish-list__item">
         <div class="dish-list__info">
           <span class="dish-list__item-id">Id: {{ dish.id }}</span>
-          <span class="dish-list__item-name">nombre: {{ dish.name }}</span>
+          <span class="dish-list__item-name">Nombre: {{ dish.name }}</span>
           <span class="dish-list__item-price"
-            >precio: {{ dish.price | currency }}</span
+            >Precio: {{ dish.price | currency : "USD" }}</span
           >
         </div>
       </li>

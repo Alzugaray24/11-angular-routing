@@ -1,14 +1,21 @@
 <div class="user-list">
   <div class="user-list__container">
     <h1 class="user-list__title">Lista de Usuarios</h1>
+    <div
+      *ngIf="message"
+      [ngClass]="{
+        'user-list__message--success': messageType === 'success',
+        'user-list__message--error': messageType === 'error'
+      }"
+      class="user-list__message"
+    >
+      {{ message }}
+    </div>
     <ul class="user-list__items">
       <li *ngFor="let customer of customers" class="user-list__item">
         <div class="user-list__info">
-          <span class="user-list__item-id">id: {{ customer.id }}</span>
-          <span class="user-list__item-name">nombre:{{ customer.name }}</span>
-          <span class="user-list__item-type"
-            >cliente tipo: {{ customer.type }}</span
-          >
+          <span class="user-list__item-id">Id: {{ customer.id }}</span>
+          <span class="user-list__item-name">Nombre: {{ customer.name }}</span>
         </div>
       </li>
     </ul>

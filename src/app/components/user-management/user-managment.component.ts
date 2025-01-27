@@ -3,11 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { ErrorComponent } from '../error/error.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-user-management',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterModule,
+    RouterOutlet,
+    ErrorComponent,
+    HeaderComponent,
+  ],
   templateUrl: './user-managment.component.html',
   styleUrls: ['./user-managment.component.scss'],
 })

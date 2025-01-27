@@ -1,25 +1,35 @@
 <div class="form">
   <form class="form__container" (ngSubmit)="updateCustomer()">
-    <label for="id" class="form__label">ID del Cliente</label>
+    <label for="customerId" class="form__label">ID del Cliente</label>
     <input
-      id="id"
+      id="customerId"
       type="number"
       [(ngModel)]="customerId"
-      name="id"
+      name="customerId"
       placeholder="Ingrese el ID del cliente"
       class="form__input"
       required
     />
-    <label for="name" class="form__label">Nombre</label>
+    <label for="customerName" class="form__label">Nombre del Cliente</label>
     <input
-      id="name"
+      id="customerName"
       type="text"
       [(ngModel)]="customerName"
-      name="name"
+      name="customerName"
       placeholder="Ingrese el nombre del cliente"
       class="form__input"
       required
     />
     <button type="submit" class="form__button">Actualizar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>

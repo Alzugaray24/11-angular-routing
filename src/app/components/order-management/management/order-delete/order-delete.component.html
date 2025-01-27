@@ -1,15 +1,25 @@
 <div class="form">
   <form class="form__container" (ngSubmit)="deleteOrder()">
-    <label for="id" class="form__label">ID del Pedido</label>
+    <label for="orderId" class="form__label">ID del Pedido</label>
     <input
-      id="id"
+      id="orderId"
       type="number"
       [(ngModel)]="orderId"
-      name="id"
+      name="orderId"
       placeholder="Ingrese el ID del pedido"
       class="form__input"
       required
     />
     <button type="submit" class="form__button">Eliminar</button>
   </form>
+  <div
+    *ngIf="message"
+    [ngClass]="{
+      'form__message--success': messageType === 'success',
+      'form__message--error': messageType === 'error'
+    }"
+    class="form__message"
+  >
+    {{ message }}
+  </div>
 </div>
