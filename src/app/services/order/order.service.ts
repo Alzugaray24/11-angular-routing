@@ -35,11 +35,11 @@ export class OrderService {
     );
   }
 
-  getOrderById(id: number): Observable<OrderResponseDTO> {
-    return this.http.get<OrderResponseDTO>(`${this.apiUrl}/${id}`);
-  }
-
   deleteOrder(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  getOrderById(id: number): Observable<OrderResponseDTO> {
+    return this.http.get<OrderResponseDTO>(`${this.apiUrl}/${id}`);
   }
 }

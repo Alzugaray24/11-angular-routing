@@ -1,26 +1,35 @@
 <div class="form">
   <form class="form__container" (ngSubmit)="updateOrder()">
-    <h1 class="form__label">Actualizar Pedido</h1>
+    <label for="orderId" class="form__label">ID del Pedido</label>
+    <input
+      id="orderId"
+      type="number"
+      [(ngModel)]="orderId"
+      name="orderId"
+      placeholder="Ingrese el ID del pedido"
+      class="form__input"
+      required
+    />
     <label for="customerId" class="form__label">ID del Cliente</label>
     <input
       id="customerId"
       type="number"
       [(ngModel)]="customerId"
       name="customerId"
+      placeholder="Ingrese el ID del cliente"
       class="form__input"
       required
     />
-
     <label for="dishes" class="form__label">IDs de los Platos</label>
     <input
       id="dishes"
       type="text"
       [(ngModel)]="dishIds"
       name="dishes"
+      placeholder="Ingrese los IDs de los platos separados por comas"
       class="form__input"
       required
     />
-
-    <button type="submit" class="form__button">Actualizar Pedido</button>
+    <button type="submit" class="form__button">Actualizar</button>
   </form>
 </div>
